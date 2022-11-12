@@ -56,7 +56,7 @@ jobs:
       - name: Run Trivy image scan
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: 'ghcr.io/${{ github.repository_owner }}/invenio-rdm:${{ github.sha }}'
+          image-ref: '${{ matrix.image }}:${{ github.sha }}'
           format: 'sarif'
           output: 'trivy-results.sarif'
           exit-code: '1'
