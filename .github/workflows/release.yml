@@ -45,7 +45,7 @@ jobs:
       - name: Setup files and folders using cookiecutter
         run: |
           python -m pip install --upgrade pipenv cookiecutter
-          cookiecutter gh:front-matter/cookiecutter-invenio-rdm --no-input --config-file ./.github/default-config.yml
+          cookiecutter gh:front-matter/cookiecutter-invenio-rdm --no-input --config-file ./.github/default-config.yaml
           cd invenio-rdm
           pipenv lock
 
