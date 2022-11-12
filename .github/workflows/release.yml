@@ -51,7 +51,7 @@ jobs:
 
       - name: Build an image from Dockerfile
         run: |
-          docker build -t ${{ matrix.image }}:${{ github.sha }} ${{ matrix.context }}
+          docker buildx -t ${{ matrix.image }}:${{ github.sha }} ${{ matrix.context }}
 
       - name: Run Trivy image scan
         uses: aquasecurity/trivy-action@master
