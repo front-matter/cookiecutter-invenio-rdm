@@ -28,4 +28,9 @@ RUN cp -r ./static/. ${INVENIO_INSTANCE_PATH}/static/ && \
     invenio webpack install --unsafe && \
     invenio webpack build
 
+# Create user
+ENV INVENIO_USER_ID=1000
+RUN useradd invenio --uid ${INVENIO_USER_ID} --gid 0
+USER invenio
+
 ENTRYPOINT [ "bash", "-c"]
