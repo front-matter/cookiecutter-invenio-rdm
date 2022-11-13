@@ -26,7 +26,6 @@ jobs:
           security-checks: 'vuln,secret,config'
           format: 'sarif'
           output: 'trivy-results.sarif'
-          exit-code: '1'
           ignore-unfixed: true
           severity: 'CRITICAL,HIGH'
 
@@ -59,7 +58,6 @@ jobs:
           image-ref: '${{ matrix.image }}:${{ github.sha }}'
           format: 'sarif'
           output: 'trivy-results.sarif'
-          exit-code: '1'
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
