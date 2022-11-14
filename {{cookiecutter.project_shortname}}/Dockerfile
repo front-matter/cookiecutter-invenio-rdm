@@ -8,7 +8,7 @@
 # Note: It is important to keep the commands in this file in sync with your
 # bootstrap script located in ./scripts/bootstrap.
 
-FROM --platform=$BUILDPLATFORM ghcr.io/front-matter/almalinux:1.0.1
+FROM --platform=$BUILDPLATFORM ghcr.io/front-matter/almalinux:1.0.2-beta.1
 
 COPY site ./site
 COPY Pipfile Pipfile.lock ./
