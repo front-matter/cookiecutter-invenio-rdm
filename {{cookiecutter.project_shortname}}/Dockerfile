@@ -10,9 +10,8 @@
 
 FROM --platform=$BUILDPLATFORM ghcr.io/front-matter/almalinux:1.0.2-beta.1
 
-COPY site ./site
-RUN chown -R invenio:root /opt/invenio/src/site
-COPY Pipfile Pipfile.lock ./
+COPY --chown=invenio:root site ./site
+COPY --chown=invenio:root Pipfile Pipfile.lock ./
 RUN pipenv install --deploy --system
 
 COPY ./docker/uwsgi/ ${INVENIO_INSTANCE_PATH}
